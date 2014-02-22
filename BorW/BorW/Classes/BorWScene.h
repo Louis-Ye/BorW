@@ -16,7 +16,7 @@
 /**
  *  The main scene
  */
-@interface BorWScene : CCScene
+@interface BorWScene : CCScene <CCPhysicsCollisionDelegate>
 
 // -----------------------------------------------------------------------
 

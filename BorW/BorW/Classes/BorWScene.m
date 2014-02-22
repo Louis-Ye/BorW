@@ -19,6 +19,8 @@
 {
     CCSprite *_sprite;
     CCSprite *_background;
+    CCPhysicsNode *_physicsWorld;
+    CCSprite *_boundary[100];
 }
 
 // -----------------------------------------------------------------------
@@ -43,20 +45,35 @@
     
     _background = [CCSprite spriteWithImageNamed:@"BowLayout.png"];
     _background.anchorPoint = CGPointMake(0, 0);
-    CGSize s = [[CCDirector sharedDirector] viewSize];
+    //CGSize s = [[CCDirector sharedDirector] viewSize];
     CGSize imageSize = [_background boundingBox].size;
-    [_background setScaleX:(s.width/imageSize.width)];
-    [_background setScaleY:(s.height/imageSize.height)];
+    [_background setScaleX:(self.contentSize.width/imageSize.width)];
+    [_background setScaleY:(self.contentSize.height/imageSize.height)];
     [self addChild:_background];
+    
+    _physicsWorld = [CCPhysicsNode node];
+    _physicsWorld.gravity = ccp(0,0);
+    _physicsWorld.debugDraw = YES;
+    _physicsWorld.collisionDelegate = self;
+    [self addChild:_physicsWorld];
     
     // Add a sprite
     _sprite = [CCSprite spriteWithImageNamed:@"Folk.png"];
-    _sprite.position  = ccp(self.contentSize.width/2,self.contentSize.height/2);
-    [self addChild:_sprite];
+    _sprite.position  = ccp(0,self.contentSize.height/2);
+    _sprite.physicsBody = [CCPhysicsBody bodyWithRect:(CGRect){CGPointZero, _sprite.contentSize} cornerRadius:0];
+    _sprite.physicsBody.collisionGroup = @"player1";
+    [_physicsWorld addChild: _sprite];
     
     // Animate sprite with action
-    CCActionRotateBy* actionSpin = [CCActionRotateBy actionWithDuration:1.5f angle:360];
-    [_sprite runAction:[CCActionRepeatForever actionWithAction:actionSpin]];
+    //CCActionRotateBy* actionSpin = [CCActionRotateBy actionWithDuration:1.5f angle:360];
+    //[_sprite runAction:[CCActionRepeatForever actionWithAction:actionSpin]];
+    
+    _boundary[0] = [CCSprite new];
+    _boundary[0].position = ccp(0,self.contentSize.height/4);
+    _boundary[0].contentSize= (CGSize){100.0,1.0};
+    _boundary[0].physicsBody = [CCPhysicsBody bodyWithRect:(CGRect){CGPointZero, _boundary[0].contentSize} cornerRadius:0];
+    _boundary[0].physicsBody.collisionGroup = @"boundaryGroup";
+    [_physicsWorld addChild: _boundary[0]];
     
     // Create a back button
     CCButton *backButton = [CCButton buttonWithTitle:@"[ Menu ]" fontName:@"Verdana-Bold" fontSize:18.0f];

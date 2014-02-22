@@ -226,6 +226,7 @@
 		7AFBAC5718B9291D00621E99 /* BowLayout.png in Resources */ = {isa = PBXBuildFile; fileRef = 7AFBAC5618B9291D00621E99 /* BowLayout.png */; };
 		7AFBAC5A18B9298E00621E99 /* BorWScene.m in Sources */ = {isa = PBXBuildFile; fileRef = 7AFBAC5918B9298E00621E99 /* BorWScene.m */; };
 		7AFBAC5C18B9318300621E99 /* Folk.png in Resources */ = {isa = PBXBuildFile; fileRef = 7AFBAC5B18B9318300621E99 /* Folk.png */; };
+		7AFBAC5E18B93C2D00621E99 /* player.png in Resources */ = {isa = PBXBuildFile; fileRef = 7AFBAC5D18B93C2D00621E99 /* player.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -686,6 +687,7 @@
 		7AFBAC5818B9298E00621E99 /* BorWScene.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = BorWScene.h; path = Classes/BorWScene.h; sourceTree = "<group>"; };
 		7AFBAC5918B9298E00621E99 /* BorWScene.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = BorWScene.m; path = Classes/BorWScene.m; sourceTree = "<group>"; };
 		7AFBAC5B18B9318300621E99 /* Folk.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Folk.png; path = Resources/Folk.png; sourceTree = "<group>"; };
+		7AFBAC5D18B93C2D00621E99 /* player.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = player.png; path = Resources/player.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -757,6 +759,7 @@
 		7AFBA71018B920D600621E99 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				7AFBAC5D18B93C2D00621E99 /* player.png */,
 				7AFBAC5B18B9318300621E99 /* Folk.png */,
 				7AFBAC5618B9291D00621E99 /* BowLayout.png */,
 				7AFBA71118B920D600621E99 /* Default.png */,
@@ -1691,6 +1694,7 @@
 				7AFBA91418B920D800621E99 /* LICENSE_Kazmath.txt in Resources */,
 				7AFBA71F18B920D600621E99 /* Icon-72.png in Resources */,
 				7AFBA86D18B920D700621E99 /* LICENSE_cocos2d.txt in Resources */,
+				7AFBAC5E18B93C2D00621E99 /* player.png in Resources */,
 				7AFBAC5718B9291D00621E99 /* BowLayout.png in Resources */,
 				7AFBA9BC18B920D800621E99 /* newton-ipadhd.png in Resources */,
 				7AFBA71618B920D600621E99 /* Default-568h@2x.png in Resources */,
