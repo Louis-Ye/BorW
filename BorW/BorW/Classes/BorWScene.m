@@ -7,7 +7,7 @@
 //
 // -----------------------------------------------------------------------
 
-#import "HelloWorldScene.h"
+#import "BorWScene.h"
 #import "IntroScene.h"
 #import "NewtonScene.h"
 
@@ -15,16 +15,17 @@
 #pragma mark - HelloWorldScene
 // -----------------------------------------------------------------------
 
-@implementation HelloWorldScene
+@implementation BorWScene
 {
     CCSprite *_sprite;
+    CCSprite *_background;
 }
 
 // -----------------------------------------------------------------------
 #pragma mark - Create & Destroy
 // -----------------------------------------------------------------------
 
-+ (HelloWorldScene *)scene
++ (BorWScene *)scene
 {
     return [[self alloc] init];
 }
@@ -40,12 +41,16 @@
     // Enable touch handling on scene node
     self.userInteractionEnabled = YES;
     
-    // Create a colored background (Dark Grey)
-    CCNodeColor *background = [CCNodeColor nodeWithColor:[CCColor colorWithRed:0.2f green:0.2f blue:0.2f alpha:1.0f]];
-    [self addChild:background];
+    _background = [CCSprite spriteWithImageNamed:@"BowLayout.png"];
+    _background.anchorPoint = CGPointMake(0, 0);
+    CGSize s = [[CCDirector sharedDirector] viewSize];
+    CGSize imageSize = [_background boundingBox].size;
+    [_background setScaleX:(s.width/imageSize.width)];
+    [_background setScaleY:(s.height/imageSize.height)];
+    [self addChild:_background];
     
     // Add a sprite
-    _sprite = [CCSprite spriteWithImageNamed:@"Icon-72.png"];
+    _sprite = [CCSprite spriteWithImageNamed:@"Folk.png"];
     _sprite.position  = ccp(self.contentSize.width/2,self.contentSize.height/2);
     [self addChild:_sprite];
     

@@ -210,7 +210,6 @@
 		7AFBA99918B920D800621E99 /* LICENSE_Chipmunk.txt in Resources */ = {isa = PBXBuildFile; fileRef = 7AFBA99818B920D800621E99 /* LICENSE_Chipmunk.txt */; };
 		7AFBA99D18B920D800621E99 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 7AFBA99C18B920D800621E99 /* main.m */; };
 		7AFBA9A118B920D800621E99 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 7AFBA9A018B920D800621E99 /* AppDelegate.m */; };
-		7AFBA9A418B920D800621E99 /* HelloWorldScene.m in Sources */ = {isa = PBXBuildFile; fileRef = 7AFBA9A318B920D800621E99 /* HelloWorldScene.m */; };
 		7AFBA9A718B920D800621E99 /* IntroScene.m in Sources */ = {isa = PBXBuildFile; fileRef = 7AFBA9A618B920D800621E99 /* IntroScene.m */; };
 		7AFBA9AB18B920D800621E99 /* NewtonScene.m in Sources */ = {isa = PBXBuildFile; fileRef = 7AFBA9AA18B920D800621E99 /* NewtonScene.m */; };
 		7AFBA9AE18B920D800621E99 /* NewtonSphere.m in Sources */ = {isa = PBXBuildFile; fileRef = 7AFBA9AD18B920D800621E99 /* NewtonSphere.m */; };
@@ -224,6 +223,9 @@
 		7AFBA9C018B920D800621E99 /* newton-ipad.png in Resources */ = {isa = PBXBuildFile; fileRef = 7AFBA9BF18B920D800621E99 /* newton-ipad.png */; };
 		7AFBA9C218B920D800621E99 /* newton.plist in Resources */ = {isa = PBXBuildFile; fileRef = 7AFBA9C118B920D800621E99 /* newton.plist */; };
 		7AFBA9C418B920D800621E99 /* newton.png in Resources */ = {isa = PBXBuildFile; fileRef = 7AFBA9C318B920D800621E99 /* newton.png */; };
+		7AFBAC5718B9291D00621E99 /* BowLayout.png in Resources */ = {isa = PBXBuildFile; fileRef = 7AFBAC5618B9291D00621E99 /* BowLayout.png */; };
+		7AFBAC5A18B9298E00621E99 /* BorWScene.m in Sources */ = {isa = PBXBuildFile; fileRef = 7AFBAC5918B9298E00621E99 /* BorWScene.m */; };
+		7AFBAC5C18B9318300621E99 /* Folk.png in Resources */ = {isa = PBXBuildFile; fileRef = 7AFBAC5B18B9318300621E99 /* Folk.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -661,8 +663,6 @@
 		7AFBA99C18B920D800621E99 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = main.m; path = "Supporting Files/main.m"; sourceTree = "<group>"; };
 		7AFBA99F18B920D800621E99 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = AppDelegate.h; path = Classes/AppDelegate.h; sourceTree = "<group>"; };
 		7AFBA9A018B920D800621E99 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = AppDelegate.m; path = Classes/AppDelegate.m; sourceTree = "<group>"; };
-		7AFBA9A218B920D800621E99 /* HelloWorldScene.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = HelloWorldScene.h; path = Classes/HelloWorldScene.h; sourceTree = "<group>"; };
-		7AFBA9A318B920D800621E99 /* HelloWorldScene.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = HelloWorldScene.m; path = Classes/HelloWorldScene.m; sourceTree = "<group>"; };
 		7AFBA9A518B920D800621E99 /* IntroScene.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = IntroScene.h; path = Classes/IntroScene.h; sourceTree = "<group>"; };
 		7AFBA9A618B920D800621E99 /* IntroScene.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = IntroScene.m; path = Classes/IntroScene.m; sourceTree = "<group>"; };
 		7AFBA9A818B920D800621E99 /* NewtonConstants.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = NewtonConstants.h; path = Classes/NewtonConstants.h; sourceTree = "<group>"; };
@@ -682,6 +682,10 @@
 		7AFBA9BF18B920D800621E99 /* newton-ipad.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "newton-ipad.png"; path = "Resources/newton-ipad.png"; sourceTree = "<group>"; };
 		7AFBA9C118B920D800621E99 /* newton.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = newton.plist; path = Resources/newton.plist; sourceTree = "<group>"; };
 		7AFBA9C318B920D800621E99 /* newton.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = newton.png; path = Resources/newton.png; sourceTree = "<group>"; };
+		7AFBAC5618B9291D00621E99 /* BowLayout.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = BowLayout.png; path = Resources/BowLayout.png; sourceTree = "<group>"; };
+		7AFBAC5818B9298E00621E99 /* BorWScene.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = BorWScene.h; path = Classes/BorWScene.h; sourceTree = "<group>"; };
+		7AFBAC5918B9298E00621E99 /* BorWScene.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = BorWScene.m; path = Classes/BorWScene.m; sourceTree = "<group>"; };
+		7AFBAC5B18B9318300621E99 /* Folk.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Folk.png; path = Resources/Folk.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -753,6 +757,8 @@
 		7AFBA71018B920D600621E99 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				7AFBAC5B18B9318300621E99 /* Folk.png */,
+				7AFBAC5618B9291D00621E99 /* BowLayout.png */,
 				7AFBA71118B920D600621E99 /* Default.png */,
 				7AFBA71318B920D600621E99 /* Default@2x.png */,
 				7AFBA71518B920D600621E99 /* Default-568h@2x.png */,
@@ -1577,10 +1583,10 @@
 		7AFBA99E18B920D800621E99 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
+				7AFBAC5818B9298E00621E99 /* BorWScene.h */,
+				7AFBAC5918B9298E00621E99 /* BorWScene.m */,
 				7AFBA99F18B920D800621E99 /* AppDelegate.h */,
 				7AFBA9A018B920D800621E99 /* AppDelegate.m */,
-				7AFBA9A218B920D800621E99 /* HelloWorldScene.h */,
-				7AFBA9A318B920D800621E99 /* HelloWorldScene.m */,
 				7AFBA9A518B920D800621E99 /* IntroScene.h */,
 				7AFBA9A618B920D800621E99 /* IntroScene.m */,
 				7AFBA9A818B920D800621E99 /* NewtonConstants.h */,
@@ -1685,9 +1691,11 @@
 				7AFBA91418B920D800621E99 /* LICENSE_Kazmath.txt in Resources */,
 				7AFBA71F18B920D600621E99 /* Icon-72.png in Resources */,
 				7AFBA86D18B920D700621E99 /* LICENSE_cocos2d.txt in Resources */,
+				7AFBAC5718B9291D00621E99 /* BowLayout.png in Resources */,
 				7AFBA9BC18B920D800621E99 /* newton-ipadhd.png in Resources */,
 				7AFBA71618B920D600621E99 /* Default-568h@2x.png in Resources */,
 				7AFBA73618B920D600621E99 /* iTunesArtwork in Resources */,
+				7AFBAC5C18B9318300621E99 /* Folk.png in Resources */,
 				7AFBA9C418B920D800621E99 /* newton.png in Resources */,
 				7AFBA73118B920D600621E99 /* Icon-Spotlight-iOS7.png in Resources */,
 				7AFBA72518B920D600621E99 /* Icon-76@2x.png in Resources */,
@@ -1805,7 +1813,6 @@
 				7AFBA7EA18B920D700621E99 /* ccShaders.m in Sources */,
 				7AFBA8FE18B920D800621E99 /* matrix.c in Sources */,
 				7AFBA81018B920D700621E99 /* CCTiledMapLayer.m in Sources */,
-				7AFBA9A418B920D800621E99 /* HelloWorldScene.m in Sources */,
 				7AFBA90418B920D800621E99 /* neon_matrix_impl.c in Sources */,
 				7AFBA78918B920D700621E99 /* CCLabelTTF.m in Sources */,
 				7AFBA83E18B920D700621E99 /* NSEvent+CC.m in Sources */,
@@ -1835,6 +1842,7 @@
 				7AFBA90C18B920D800621E99 /* utility.c in Sources */,
 				7AFBA86B18B920D700621E99 /* ZipUtils.m in Sources */,
 				7AFBA87C18B920D700621E99 /* OALUtilityActions.m in Sources */,
+				7AFBAC5A18B9298E00621E99 /* BorWScene.m in Sources */,
 				7AFBA82718B920D700621E99 /* CCES2Renderer.m in Sources */,
 				7AFBA8F718B920D800621E99 /* aabb.c in Sources */,
 				7AFBA92118B920D800621E99 /* CCBsequence.m in Sources */,
@@ -2045,6 +2053,7 @@
 				7AFBA9C918B920D800621E99 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		7AFBA9CA18B920D800621E99 /* Build configuration list for PBXNativeTarget "BorW" */ = {
 			isa = XCConfigurationList;
@@ -2053,6 +2062,7 @@
 				7AFBA9CC18B920D800621E99 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
