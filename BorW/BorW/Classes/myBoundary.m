@@ -93,6 +93,12 @@ static int myScale = 2;
             default:break;
         }
     }
+    CCSprite *lBoundary=[CCSprite new];
+    lBoundary.position = CGPointMake(0, winHeight/2);
+    lBoundary.contentSize = CGSizeMake(10, winHeight);
+    lBoundary.physicsBody=[CCPhysicsBody bodyWithRect:(CGRect){CGPointZero,lBoundary.contentSize} cornerRadius:0];
+    lBoundary.physicsBody.mass=900000000000000000000000000000.00;
+    [physicsWorld addChild:lBoundary];
 }
 
 - (CGFloat)abs:(CGFloat)a{
