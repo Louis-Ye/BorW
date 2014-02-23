@@ -34,35 +34,55 @@
     // Apple recommend assigning self with supers return value
     self = [super init];
     if (!self) return(nil);
-    
+
+    long randNum = random();
+
     // Create a colored background (Dark Grey)
-    CCNodeColor *background = [CCNodeColor nodeWithColor:[CCColor colorWithRed:0.2f green:0.2f blue:0.2f alpha:1.0f]];
+    CCNodeColor *background = [CCNodeColor nodeWithColor:[self getColarByNum:(randNum)]];
     [self addChild:background];
     
+    
     // Hello world
-    CCLabelTTF *label = [CCLabelTTF labelWithString:@"Hello World" fontName:@"Chalkduster" fontSize:36.0f];
+    CCLabelTTF *label = [CCLabelTTF labelWithString:@"Black or White" fontName:@"Chalkduster" fontSize:36.0f];
     label.positionType = CCPositionTypeNormalized;
-    label.color = [CCColor redColor];
+    label.color = [self getAnotherColarByNum:(randNum)];
     label.position = ccp(0.5f, 0.5f); // Middle of screen
     [self addChild:label];
     
     // Spinning scene button
-    CCButton *spinningButton = [CCButton buttonWithTitle:@"[ Simple Sprite ]" fontName:@"Verdana-Bold" fontSize:18.0f];
-    spinningButton.positionType = CCPositionTypeNormalized;
-    spinningButton.position = ccp(0.5f, 0.35f);
-    [spinningButton setTarget:self selector:@selector(onSpinningClicked:)];
-    [self addChild:spinningButton];
+    CCButton *gameStartButton = [CCButton buttonWithTitle:@"[ Start Game ]" fontName:@"Verdana-Bold" fontSize:18.0f];
+    
+    [gameStartButton setColor:[self getAnotherColarByNum:(randNum)]];
+    gameStartButton.positionType = CCPositionTypeNormalized;
+    gameStartButton.position = ccp(0.5f, 0.35f);
+    [gameStartButton setTarget:self selector:@selector(onSpinningClicked:)];
+    [self addChild:gameStartButton];
 
+    /*
     // Next scene button
     CCButton *newtonButton = [CCButton buttonWithTitle:@"[ Newton Physics ]" fontName:@"Verdana-Bold" fontSize:18.0f];
     newtonButton.positionType = CCPositionTypeNormalized;
     newtonButton.position = ccp(0.5f, 0.20f);
     [newtonButton setTarget:self selector:@selector(onNewtonClicked:)];
     [self addChild:newtonButton];
+     */
 	
     // done
 	return self;
 }
+
+- (CCColor *) getColarByNum : (long)num
+{
+    if (num % 2 == 0) return [CCColor whiteColor];
+    else return [CCColor blackColor];
+}
+
+- (CCColor *) getAnotherColarByNum : (long)num
+{
+    if (num % 2 == 0) return [CCColor blackColor];
+    else return [CCColor whiteColor];
+}
+                               
 
 // -----------------------------------------------------------------------
 #pragma mark - Button Callbacks
