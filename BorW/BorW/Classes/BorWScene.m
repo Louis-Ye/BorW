@@ -22,7 +22,7 @@ static float WHITE_CONTROL_BUTTON_Y_POSITION = 0.05f;
 static float BLACK_CONTROL_BUTTON_X_POSITION = 0.05f;
 static float BLACK_CONTROL_BUTTON_Y_POSITION = 0.95f;
 static int PLAYER_JUMP_DURATION = 2;
-static float GRAVITY = 10.0f;
+static float GRAVITY = 50.0f;
 
 @implementation BorWScene
 {
@@ -75,7 +75,7 @@ static float GRAVITY = 10.0f;
     
     _physicsWorld = [CCPhysicsNode node];
     _physicsWorld.gravity = ccp(0, 0);
-    _physicsWorld.debugDraw = YES;
+    _physicsWorld.debugDraw = NO;
     _physicsWorld.collisionDelegate = self;
     [self addChild:_physicsWorld];
     
@@ -84,16 +84,18 @@ static float GRAVITY = 10.0f;
     
     // Add a sprite (white)
     _sprite_white = [CCSprite spriteWithImageNamed:@"Folk.png"];
-    _sprite_white.position  = ccp(0,self.contentSize.height/2);
+    _sprite_white.position  = ccp(self.contentSize.width/2,self.contentSize.height/3*2);
     _sprite_white.physicsBody = [CCPhysicsBody bodyWithRect:(CGRect){CGPointZero, _sprite_white.contentSize} cornerRadius:0];
     _sprite_white.physicsBody.collisionGroup = @"player1";
+    _sprite_white.physicsBody.allowsRotation = NO;
     [_physicsWorld addChild: _sprite_white];
     
     // Add another sprite (black)
     _sprite_black = [CCSprite spriteWithImageNamed:@"Folk.png"];
-    _sprite_black.position  = ccp(self.contentSize.width, self.contentSize.height/3*2);
+    _sprite_black.position  = ccp(self.contentSize.width/2, self.contentSize.height/3);
     _sprite_black.physicsBody = [CCPhysicsBody bodyWithRect:(CGRect){CGPointZero, _sprite_black.contentSize} cornerRadius:0];
     _sprite_black.physicsBody.collisionGroup = @"player2";
+    _sprite_black.physicsBody.allowsRotation = NO;
     [_physicsWorld addChild: _sprite_black];
     
     // Animate sprite with action
@@ -173,6 +175,12 @@ static float GRAVITY = 10.0f;
     
     // Log touch location
     CCLOG(@"Move sprite to @ %@",NSStringFromCGPoint(touchLoc));
+}
+
+-(void) draw
+{
+    [_sprite_white.physicsBody applyForce:CGPointMake(0.0, -GRAVITY)];
+    [_sprite_black.physicsBody applyForce:CGPointMake(0.0, GRAVITY)];
 }
 
 
@@ -265,7 +273,9 @@ static float GRAVITY = 10.0f;
 }
 - (void)onWhiteFlipClicked:(id)sender
 {
-    
+    CCSprite *tmp = _sprite_white;
+    _sprite_white = _sprite_black;
+    _sprite_black = tmp;
 }
 
 //-----------------------------------------------------
@@ -281,21 +291,16 @@ static float GRAVITY = 10.0f;
 }
 - (void)onBlackJumpClicked:(id)sender
 {
-    if (!blackOnTheAir) {
-        CCActionJumpBy *actionJump = [CCActionJumpBy actionWithDuration:PLAYER_JUMP_DURATION position:CGPointMake(0, -_sprite_white.contentSize.height) height:0 jumps:1];
-        [_sprite_black runAction:actionJump];
-        
-    }
-    else {
-        
-    }
+    CCActionJumpBy *actionJump = [CCActionJumpBy actionWithDuration:PLAYER_JUMP_DURATION position:CGPointMake(0, -_sprite_white.contentSize.height) height:0 jumps:1];
+    [_sprite_black runAction:actionJump];
 
-    
     [_sprite_black.physicsBody applyForce:CGPointMake(0.0, GRAVITY)];
 }
 - (void)onBlackFlipClicked:(id)sender
 {
-    
+    CCSprite *tmp = _sprite_white;
+    _sprite_white = _sprite_black;
+    _sprite_black = tmp;
 }
 
 
