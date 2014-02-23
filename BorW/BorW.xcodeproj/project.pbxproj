@@ -227,6 +227,8 @@
 		7AFBAC5A18B9298E00621E99 /* BorWScene.m in Sources */ = {isa = PBXBuildFile; fileRef = 7AFBAC5918B9298E00621E99 /* BorWScene.m */; };
 		7AFBAC5C18B9318300621E99 /* Folk.png in Resources */ = {isa = PBXBuildFile; fileRef = 7AFBAC5B18B9318300621E99 /* Folk.png */; };
 		7AFBAC5E18B93C2D00621E99 /* player.png in Resources */ = {isa = PBXBuildFile; fileRef = 7AFBAC5D18B93C2D00621E99 /* player.png */; };
+		7AFBAC6418B955F000621E99 /* myBoundary.m in Sources */ = {isa = PBXBuildFile; fileRef = 7AFBAC6318B955F000621E99 /* myBoundary.m */; };
+		7AFBAC6618B9778D00621E99 /* LayoutFinal.png in Resources */ = {isa = PBXBuildFile; fileRef = 7AFBAC6518B9778D00621E99 /* LayoutFinal.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -688,6 +690,9 @@
 		7AFBAC5918B9298E00621E99 /* BorWScene.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = BorWScene.m; path = Classes/BorWScene.m; sourceTree = "<group>"; };
 		7AFBAC5B18B9318300621E99 /* Folk.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Folk.png; path = Resources/Folk.png; sourceTree = "<group>"; };
 		7AFBAC5D18B93C2D00621E99 /* player.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = player.png; path = Resources/player.png; sourceTree = "<group>"; };
+		7AFBAC6218B955F000621E99 /* myBoundary.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = myBoundary.h; path = Classes/myBoundary.h; sourceTree = "<group>"; };
+		7AFBAC6318B955F000621E99 /* myBoundary.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = myBoundary.m; path = Classes/myBoundary.m; sourceTree = "<group>"; };
+		7AFBAC6518B9778D00621E99 /* LayoutFinal.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = LayoutFinal.png; path = Resources/LayoutFinal.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -759,6 +764,7 @@
 		7AFBA71018B920D600621E99 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				7AFBAC6518B9778D00621E99 /* LayoutFinal.png */,
 				7AFBAC5D18B93C2D00621E99 /* player.png */,
 				7AFBAC5B18B9318300621E99 /* Folk.png */,
 				7AFBAC5618B9291D00621E99 /* BowLayout.png */,
@@ -1601,6 +1607,8 @@
 				7AFBA9B018B920D800621E99 /* LightBulb.m */,
 				7AFBA9B218B920D800621E99 /* Rope.h */,
 				7AFBA9B318B920D800621E99 /* Rope.m */,
+				7AFBAC6218B955F000621E99 /* myBoundary.h */,
+				7AFBAC6318B955F000621E99 /* myBoundary.m */,
 			);
 			name = Classes;
 			sourceTree = "<group>";
@@ -1707,6 +1715,7 @@
 				7AFBA73318B920D600621E99 /* Icon-Spotlight-iOS7@2x.png in Resources */,
 				7AFBA72318B920D600621E99 /* Icon-76.png in Resources */,
 				7AFBA8F918B920D800621E99 /* ChangeLog in Resources */,
+				7AFBAC6618B9778D00621E99 /* LayoutFinal.png in Resources */,
 				7AFBA73818B920D600621E99 /* iTunesArtwork@2x in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1752,6 +1761,7 @@
 				7AFBA8DB18B920D800621E99 /* CCSlider.m in Sources */,
 				7AFBA81618B920D700621E99 /* CCTMXXMLParser.m in Sources */,
 				7AFBA85618B920D700621E99 /* CGPointExtension.m in Sources */,
+				7AFBAC6418B955F000621E99 /* myBoundary.m in Sources */,
 				7AFBA8E118B920D800621E99 /* CCTextField.m in Sources */,
 				7AFBA84C18B920D700621E99 /* CCProfiling.m in Sources */,
 				7AFBA87318B920D700621E99 /* OALAction.m in Sources */,

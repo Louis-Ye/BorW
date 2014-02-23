@@ -10,17 +10,17 @@
 #import "BorWScene.h"
 #import "IntroScene.h"
 #import "NewtonScene.h"
+#import "myBoundary.h"
 
 // -----------------------------------------------------------------------
 #pragma mark - HelloWorldScene
 // -----------------------------------------------------------------------
-
+static int myScale = 2;
 @implementation BorWScene
 {
     CCSprite *_sprite;
     CCSprite *_background;
     CCPhysicsNode *_physicsWorld;
-    CCSprite *_boundary[100];
 }
 
 // -----------------------------------------------------------------------
@@ -43,19 +43,21 @@
     // Enable touch handling on scene node
     self.userInteractionEnabled = YES;
     
-    _background = [CCSprite spriteWithImageNamed:@"BowLayout.png"];
+    _background = [CCSprite spriteWithImageNamed:@"LayoutFinal.png"];
     _background.anchorPoint = CGPointMake(0, 0);
     //CGSize s = [[CCDirector sharedDirector] viewSize];
     CGSize imageSize = [_background boundingBox].size;
     [_background setScaleX:(self.contentSize.width/imageSize.width)];
     [_background setScaleY:(self.contentSize.height/imageSize.height)];
     [self addChild:_background];
-    
     _physicsWorld = [CCPhysicsNode node];
     _physicsWorld.gravity = ccp(0,0);
     _physicsWorld.debugDraw = YES;
     _physicsWorld.collisionDelegate = self;
     [self addChild:_physicsWorld];
+    
+    [myBoundary makeBoundary: _physicsWorld : self.contentSize.height : self.contentSize.width];
+    
     
     // Add a sprite
     _sprite = [CCSprite spriteWithImageNamed:@"Folk.png"];
@@ -68,13 +70,7 @@
     //CCActionRotateBy* actionSpin = [CCActionRotateBy actionWithDuration:1.5f angle:360];
     //[_sprite runAction:[CCActionRepeatForever actionWithAction:actionSpin]];
     
-    _boundary[0] = [CCSprite new];
-    _boundary[0].position = ccp(0,self.contentSize.height/4);
-    _boundary[0].contentSize= (CGSize){100.0,1.0};
-    _boundary[0].physicsBody = [CCPhysicsBody bodyWithRect:(CGRect){CGPointZero, _boundary[0].contentSize} cornerRadius:0];
-    _boundary[0].physicsBody.collisionGroup = @"boundaryGroup";
-    [_physicsWorld addChild: _boundary[0]];
-    
+
     // Create a back button
     CCButton *backButton = [CCButton buttonWithTitle:@"[ Menu ]" fontName:@"Verdana-Bold" fontSize:18.0f];
     backButton.positionType = CCPositionTypeNormalized;
