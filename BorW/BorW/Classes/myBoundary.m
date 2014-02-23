@@ -102,6 +102,24 @@ static int myScale = 2;
     lBoundary.physicsBody=[CCPhysicsBody bodyWithRect:(CGRect){CGPointZero,lBoundary.contentSize} cornerRadius:0];
     lBoundary.physicsBody.mass=900000000000000000000000000000.00;
     [physicsWorld addChild:lBoundary];
+    CCSprite *rBoundary=[CCSprite new];
+    rBoundary.position = CGPointMake(winWidth, winHeight/2);
+    rBoundary.contentSize = CGSizeMake(1, winHeight);
+    rBoundary.physicsBody=[CCPhysicsBody bodyWithRect:(CGRect){CGPointZero,rBoundary.contentSize} cornerRadius:0];
+    rBoundary.physicsBody.mass=900000000000000000000000000000.00;
+    [physicsWorld addChild:rBoundary];
+    CCSprite *uBoundary=[CCSprite new];
+    uBoundary.position = CGPointMake(winWidth/2, 0);
+    uBoundary.contentSize = CGSizeMake(winWidth,1);
+    uBoundary.physicsBody=[CCPhysicsBody bodyWithRect:(CGRect){CGPointZero,uBoundary.contentSize} cornerRadius:0];
+    uBoundary.physicsBody.mass=900000000000000000000000000000.00;
+    [physicsWorld addChild:uBoundary];
+    CCSprite *dBoundary=[CCSprite new];
+    dBoundary.position = CGPointMake(winWidth/2, winHeight);
+    dBoundary.contentSize = CGSizeMake(winWidth,1);
+    dBoundary.physicsBody=[CCPhysicsBody bodyWithRect:(CGRect){CGPointZero,dBoundary.contentSize} cornerRadius:0];
+    dBoundary.physicsBody.mass=900000000000000000000000000000.00;
+    [physicsWorld addChild:dBoundary];
 }
 
 - (CGFloat)abs:(CGFloat)a{
