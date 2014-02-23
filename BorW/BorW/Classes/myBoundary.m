@@ -92,6 +92,9 @@ static int myScale = 2;
             case 3:_boundary[i].physicsBody.collisionType = @"horizontalBoundaryGroup";break;
             default:break;
         }
+        
+        //_boundary[i].physicsBody.mass = 0.0f;
+        _boundary[i].physicsBody.mass = 9000000000000000000000000000000000.0;
     }
 }
 

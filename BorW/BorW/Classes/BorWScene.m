@@ -22,6 +22,7 @@ static float WHITE_CONTROL_BUTTON_Y_POSITION = 0.05f;
 static float BLACK_CONTROL_BUTTON_X_POSITION = 0.05f;
 static float BLACK_CONTROL_BUTTON_Y_POSITION = 0.95f;
 static int PLAYER_JUMP_DURATION = 2;
+static float GRAVITY = 10.0f;
 
 @implementation BorWScene
 {
@@ -90,7 +91,7 @@ static int PLAYER_JUMP_DURATION = 2;
     
     // Add another sprite (black)
     _sprite_black = [CCSprite spriteWithImageNamed:@"Folk.png"];
-    _sprite_black.position  = ccp(self.contentSize.width, self.contentSize.height/2);
+    _sprite_black.position  = ccp(self.contentSize.width, self.contentSize.height/3*2);
     _sprite_black.physicsBody = [CCPhysicsBody bodyWithRect:(CGRect){CGPointZero, _sprite_black.contentSize} cornerRadius:0];
     _sprite_black.physicsBody.collisionGroup = @"player2";
     [_physicsWorld addChild: _sprite_black];
@@ -259,6 +260,8 @@ static int PLAYER_JUMP_DURATION = 2;
 {
     CCActionJumpBy *actionJump = [CCActionJumpBy actionWithDuration:PLAYER_JUMP_DURATION position:CGPointMake(0, _sprite_white.contentSize.height) height:0 jumps:1];
     [_sprite_white runAction:actionJump];
+    
+    [_sprite_white.physicsBody applyForce:CGPointMake(0.0, GRAVITY)];
 }
 - (void)onWhiteFlipClicked:(id)sender
 {
@@ -278,8 +281,17 @@ static int PLAYER_JUMP_DURATION = 2;
 }
 - (void)onBlackJumpClicked:(id)sender
 {
-    CCActionJumpBy *actionJump = [CCActionJumpBy actionWithDuration:PLAYER_JUMP_DURATION position:CGPointMake(0, _sprite_white.contentSize.height) height:0 jumps:1];
-    [_sprite_black runAction:actionJump];
+    if (!blackOnTheAir) {
+        CCActionJumpBy *actionJump = [CCActionJumpBy actionWithDuration:PLAYER_JUMP_DURATION position:CGPointMake(0, -_sprite_white.contentSize.height) height:0 jumps:1];
+        [_sprite_black runAction:actionJump];
+        
+    }
+    else {
+        
+    }
+
+    
+    [_sprite_black.physicsBody applyForce:CGPointMake(0.0, GRAVITY)];
 }
 - (void)onBlackFlipClicked:(id)sender
 {
